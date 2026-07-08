@@ -5657,5 +5657,4488 @@ textarea.form-control{
     }
 
 }     
+/*==================================================
+            MOVIX COMPONENTS
+            PART 5
+==================================================*/
 
+
+/*==================================================
+                MODAL
+==================================================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.55);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:all .35s var(--ease);
+
+    z-index:9999;
+
+}
+
+.modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.modal-content{
+
+    width:min(680px,92%);
+
+    background:#fff;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-xl);
+
+    transform:translateY(30px);
+
+    transition:.35s;
+
+}
+
+.modal.active .modal-content{
+
+    transform:translateY(0);
+
+}
+
+.modal-header{
+
+    padding:30px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.modal-body{
+
+    padding:35px;
+
+}
+
+.modal-footer{
+
+    padding:25px 35px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:16px;
+
+    border-top:1px solid var(--border);
+
+}
+
+
+
+/*==================================================
+                DRAWER
+==================================================*/
+
+.drawer{
+
+    position:fixed;
+
+    top:0;
+
+    right:-420px;
+
+    width:420px;
+
+    height:100vh;
+
+    background:#fff;
+
+    transition:.4s;
+
+    box-shadow:-10px 0 40px rgba(0,0,0,.08);
+
+    z-index:9999;
+
+}
+
+.drawer.active{
+
+    right:0;
+
+}
+
+
+
+/*==================================================
+                TOOLTIP
+==================================================*/
+
+.tooltip{
+
+    position:relative;
+
+}
+
+.tooltip::after{
+
+    content:attr(data-tooltip);
+
+    position:absolute;
+
+    bottom:120%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:10px 16px;
+
+    background:#111827;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    font-size:13px;
+
+}
+
+.tooltip:hover::after{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/*==================================================
+                ACCORDION
+==================================================*/
+
+.accordion{
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+}
+
+.accordion-item{
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.accordion-item:last-child{
+
+    border:none;
+
+}
+
+.accordion-button{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:24px 28px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+.accordion-content{
+
+    display:none;
+
+    padding:0 28px 28px;
+
+    color:var(--text-muted);
+
+}
+
+.accordion-item.active .accordion-content{
+
+    display:block;
+
+}
+
+
+
+/*==================================================
+                TABS
+==================================================*/
+
+.tabs{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.tab{
+
+    padding:14px 24px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.tab.active{
+
+    color:#fff;
+
+    background:var(--gradient-primary);
+
+    border-color:transparent;
+
+}
+
+
+
+/*==================================================
+                CHIP
+==================================================*/
+
+.chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    background:#F8FAFC;
+
+    border-radius:999px;
+
+    border:1px solid var(--border);
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.chip:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+
+
+/*==================================================
+                TAG
+==================================================*/
+
+.tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:32px;
+
+    padding-inline:14px;
+
+    border-radius:999px;
+
+    background:#EEF2FF;
+
+    color:#4338CA;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+/*==================================================
+                TIMELINE
+==================================================*/
+
+.timeline{
+
+    position:relative;
+
+    padding-left:50px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:20px;
+
+    width:2px;
+
+    height:100%;
+
+    background:var(--border);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:40px;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:-39px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    border:4px solid #fff;
+
+}
+
+
+
+/*==================================================
+                EMPTY STATE
+==================================================*/
+
+.empty-state{
+
+    text-align:center;
+
+    padding:80px 30px;
+
+}
+
+.empty-state img{
+
+    width:220px;
+
+    margin:auto;
+
+    margin-bottom:35px;
+
+}
+
+.empty-state h3{
+
+    margin-bottom:15px;
+
+}
+
+.empty-state p{
+
+    color:var(--text-muted);
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+
+
+/*==================================================
+                STATUS
+==================================================*/
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.status::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+}
+
+.status.online::before{
+
+    background:#22C55E;
+
+}
+
+.status.busy::before{
+
+    background:#EF4444;
+
+}
+
+.status.away::before{
+
+    background:#F59E0B;
+
+}
+
+
+
+/*==================================================
+                BREADCRUMB
+==================================================*/
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:14px;
+
+}
+
+.breadcrumb a{
+
+    color:var(--text-muted);
+
+}
+
+.breadcrumb span{
+
+    color:var(--primary);
+
+}
+        /*==================================================
+            MOVIX SECTIONS
+            PART 1
+==================================================*/
+
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:20px 0;
+
+    transition:.4s var(--ease);
+
+}
+
+.header.scrolled{
+
+    padding:12px 0;
+
+    backdrop-filter:blur(24px);
+
+    background:rgba(255,255,255,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.6);
+
+    box-shadow:0 15px 40px rgba(15,23,42,.06);
+
+}
+
+.header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+/*==================================================
+                    LOGO
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:var(--secondary);
+
+}
+
+.logo img{
+
+    height:48px;
+
+}
+
+
+
+/*==================================================
+                    NAVBAR
+==================================================*/
+
+.navbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:36px;
+
+}
+
+.navbar a{
+
+    position:relative;
+
+    color:var(--text-primary);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:var(--primary);
+
+}
+
+.navbar a.active{
+
+    color:var(--primary);
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-10px;
+
+    left:50%;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+    transform:translateX(-50%);
+
+}
+
+.navbar a:hover::after,
+
+.navbar a.active::after{
+
+    width:100%;
+
+}
+
+
+
+/*==================================================
+                HEADER ACTIONS
+==================================================*/
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+
+/*==================================================
+                    HERO
+==================================================*/
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding-top:120px;
+
+}
+
+
+
+/*==================================================
+                HERO BACKGROUND
+==================================================*/
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    top:-220px;
+
+    right:-200px;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(227,30,36,.18),
+
+        transparent
+
+    );
+
+    filter:blur(120px);
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    bottom:-250px;
+
+    left:-180px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(37,99,235,.10),
+
+        transparent
+
+    );
+
+    filter:blur(120px);
+
+}
+
+
+
+/*==================================================
+                HERO CONTENT
+==================================================*/
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-badge{
+
+    margin-bottom:26px;
+
+}
+
+.hero-title{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    font-weight:900;
+
+    margin-bottom:30px;
+
+}
+
+.hero-title span{
+
+    color:var(--primary);
+
+}
+
+.hero-description{
+
+    max-width:620px;
+
+    font-size:20px;
+
+    color:var(--text-muted);
+
+    margin-bottom:40px;
+
+}
+
+
+
+/*==================================================
+                HERO BUTTONS
+==================================================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+/*==================================================
+                HERO USERS
+==================================================*/
+
+.hero-users{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.avatars{
+
+    display:flex;
+
+}
+
+.avatars img{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    border:3px solid #fff;
+
+    margin-left:-14px;
+
+}
+
+.avatars img:first-child{
+
+    margin-left:0;
+
+}
+
+
+
+/*==================================================
+                HERO IMAGE
+==================================================*/
+
+.hero-image{
+
+    position:relative;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    border-radius:36px;
+
+    box-shadow:0 40px 100px rgba(15,23,42,.15);
+
+}
+
+
+
+/*==================================================
+                FLOATING CARDS
+==================================================*/
+
+.hero-card{
+
+    position:absolute;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.6);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.card-one{
+
+    top:-20px;
+
+    left:-30px;
+
+}
+
+.card-two{
+
+    right:-35px;
+
+    top:45%;
+
+}
+
+.card-three{
+
+    bottom:-25px;
+
+    left:45px;
+
+}
+
+
+
+/*==================================================
+                SCROLL INDICATOR
+==================================================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.scroll-indicator span{
+
+    display:block;
+
+    width:28px;
+
+    height:48px;
+
+    border:2px solid var(--gray-300);
+
+    border-radius:30px;
+
+    position:relative;
+
+}
+
+.scroll-indicator span::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:10px;
+
+    width:6px;
+
+    height:10px;
+
+    border-radius:20px;
+
+    background:var(--primary);
+
+    transform:translateX(-50%);
+
+    animation:wheel 2s infinite;
+
+}
+
+@keyframes wheel{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,16px);
+
+    }
+
+}
+        /*==================================================
+            MOVIX SECTIONS
+            PART 2
+==================================================*/
+
+
+/*==================================================
+                PLATFORM PREVIEW
+==================================================*/
+
+.platform-preview{
+
+    position:relative;
+
+    padding:140px 0;
+
+}
+
+.preview-tabs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    margin-bottom:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.preview-tabs button{
+
+    height:52px;
+
+    padding:0 26px;
+
+    border-radius:999px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.preview-tabs button:hover,
+
+.preview-tabs button.active{
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    border-color:transparent;
+
+}
+
+.preview-window{
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.window-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    height:60px;
+
+    padding-inline:24px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.window-header span{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#CBD5E1;
+
+}
+
+.window-body{
+
+    display:grid;
+
+    grid-template-columns:260px 1fr;
+
+    min-height:620px;
+
+}
+
+.sidebar-mini{
+
+    padding:30px;
+
+    border-right:1px solid var(--border);
+
+}
+
+.sidebar-mini .menu{
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.sidebar-mini .menu:hover,
+
+.sidebar-mini .menu.active{
+
+    background:var(--gray-100);
+
+    color:var(--primary);
+
+}
+
+.dashboard-mini{
+
+    padding:35px;
+
+}
+
+.mini-card{
+
+    background:#F8FAFC;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:24px;
+
+}
+
+.mini-card h3{
+
+    margin-top:12px;
+
+    font-size:34px;
+
+}
+
+.mini-chart{
+
+    height:280px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:24px;
+
+    border:2px dashed var(--border);
+
+    background:#fff;
+
+}
+
+
+
+/*==================================================
+                TRUSTED BY
+==================================================*/
+
+.trusted{
+
+    padding:90px 0;
+
+}
+
+.trusted-title{
+
+    text-align:center;
+
+    color:var(--text-muted);
+
+    margin-bottom:40px;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.trusted-logos{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:30px;
+
+    align-items:center;
+
+}
+
+.brand{
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    font-size:22px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.brand:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+
+/*==================================================
+                STATISTICS
+==================================================*/
+
+.statistics{
+
+    padding:140px 0;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+
+/*==================================================
+                SERVICES
+==================================================*/
+
+.services{
+
+    padding:140px 0;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+/*==================================================
+                MARKETPLACE
+==================================================*/
+
+.marketplace{
+
+    padding:150px 0;
+
+}
+
+.marketplace-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        1.2fr
+
+        .9fr
+
+        .9fr;
+
+    gap:30px;
+
+    align-items:start;
+
+}
+
+.company-preview,
+
+.activity-card{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    padding:32px;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.company-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:28px;
+
+}
+
+.company-header img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+}
+
+.campaign-box{
+
+    border-radius:22px;
+
+    background:#F8FAFC;
+
+    padding:24px;
+
+}
+
+.campaign-box ul{
+
+    margin:22px 0;
+
+}
+
+.campaign-box li{
+
+    margin-bottom:14px;
+
+    color:var(--text-muted);
+
+}
+
+.activity-card ul{
+
+    margin:24px 0;
+
+}
+
+.activity-card li{
+
+    padding:14px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.activity-card li:last-child{
+
+    border:none;
+
+}
+        /*==================================================
+            MOVIX SECTIONS
+            PART 4
+==================================================*/
+
+
+/*==================================================
+                TESTIMONIALS
+==================================================*/
+
+.testimonials{
+
+    position:relative;
+
+    padding:160px 0;
+
+    background:linear-gradient(
+        180deg,
+        #FFFFFF,
+        #F8FAFC
+    );
+
+}
+
+.testimonials-slider{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+.review-card{
+
+    position:relative;
+
+    padding:40px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:32px;
+
+    transition:all .4s var(--ease);
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.review-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:24px;
+
+}
+
+.review-header img{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.review-stars{
+
+    color:#FBBF24;
+
+    font-size:18px;
+
+    margin-bottom:22px;
+
+}
+
+.review-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:30px;
+
+}
+
+.review-stat{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+
+
+/*==================================================
+                    PRICING
+==================================================*/
+
+.pricing{
+
+    padding:170px 0;
+
+}
+
+.billing-switch{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:60px;
+
+}
+
+.billing-switch span{
+
+    font-weight:600;
+
+}
+
+.billing-switch .active{
+
+    color:var(--primary);
+
+}
+
+.billing-switch small{
+
+    margin-left:8px;
+
+    color:var(--success);
+
+}
+
+.pricing-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+/*==================================================
+                    FAQ
+==================================================*/
+
+.faq{
+
+    padding:160px 0;
+
+}
+
+.faq-list{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.faq-item{
+
+    margin-bottom:22px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    padding:28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-align:left;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+.faq-answer{
+
+    padding:0 28px 28px;
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+                    CTA
+==================================================*/
+
+.cta-section{
+
+    padding:160px 0;
+
+}
+
+.cta-box{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:90px;
+
+    border-radius:40px;
+
+    color:#fff;
+
+    text-align:center;
+
+    background:var(--gradient-primary);
+
+    box-shadow:var(--shadow-primary);
+
+}
+
+.cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    top:-300px;
+
+    right:-200px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.cta-box h2{
+
+    color:#fff;
+
+    max-width:720px;
+
+    margin:25px auto;
+
+}
+
+.cta-box p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin:45px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.cta-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.cta-stats h3{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/*==================================================
+                    FOOTER
+==================================================*/
+
+.footer{
+
+    padding:90px 0 40px;
+
+    background:#0F172A;
+
+    color:#CBD5E1;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        2fr
+
+        1fr
+
+        1fr
+
+        1fr
+
+        1fr;
+
+    gap:50px;
+
+    margin-bottom:70px;
+
+}
+
+.footer-logo{
+
+    width:170px;
+
+    margin-bottom:25px;
+
+}
+
+.footer h4{
+
+    color:#fff;
+
+    margin-bottom:24px;
+
+}
+
+.footer ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer a{
+
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    color:#fff;
+
+}
+
+.social-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer-bottom{
+
+    padding-top:35px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.footer-bottom div{
+
+    display:flex;
+
+    gap:25px;
+
+}
+        /*==================================================
+            MOVIX ANIMATIONS
+            PART 1
+==================================================*/
+
+
+/*==================================================
+                GLOBAL TRANSITIONS
+==================================================*/
+
+*{
+
+    transition:
+
+        background-color .35s,
+
+        color .35s,
+
+        border-color .35s,
+
+        box-shadow .35s,
+
+        transform .35s;
+
+}
+
+
+
+/*==================================================
+                FADE IN
+==================================================*/
+
+.fade-in{
+
+    opacity:0;
+
+    animation:fadeIn .8s forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/*==================================================
+                FADE UP
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:fadeUp .9s forwards;
+
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                FADE LEFT
+==================================================*/
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-70px);
+
+    animation:fadeLeft .9s forwards;
+
+}
+
+@keyframes fadeLeft{
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                FADE RIGHT
+==================================================*/
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(70px);
+
+    animation:fadeRight .9s forwards;
+
+}
+
+@keyframes fadeRight{
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                ZOOM
+==================================================*/
+
+.zoom{
+
+    opacity:0;
+
+    transform:scale(.85);
+
+    animation:zoom .8s forwards;
+
+}
+
+@keyframes zoom{
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/*==================================================
+                FLOAT
+==================================================*/
+
+.float{
+
+    animation:floating 6s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                PULSE
+==================================================*/
+
+.pulse{
+
+    animation:pulse 2.2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/*==================================================
+                GLOW
+==================================================*/
+
+.glow{
+
+    animation:glow 2.5s infinite;
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:
+
+            0 0 0 rgba(227,30,36,.25);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 45px rgba(227,30,36,.30);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            0 0 0 rgba(227,30,36,.25);
+
+    }
+
+}
+
+
+
+/*==================================================
+                BUTTON HOVER
+==================================================*/
+
+.btn{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.35),
+
+            transparent
+
+        );
+
+    transition:.8s;
+
+}
+
+.btn:hover::before{
+
+    left:120%;
+
+}
+
+
+
+/*==================================================
+                CARD HOVER
+==================================================*/
+
+.card,
+
+.service-card,
+
+.stats-card,
+
+.review-card,
+
+.eco-card,
+
+.module-card{
+
+    transform-style:preserve-3d;
+
+}
+
+.card:hover,
+
+.service-card:hover,
+
+.stats-card:hover,
+
+.review-card:hover,
+
+.eco-card:hover,
+
+.module-card:hover{
+
+    transform:
+
+        translateY(-12px)
+
+        rotateX(2deg);
+
+}
+
+
+
+/*==================================================
+                IMAGE ZOOM
+==================================================*/
+
+.creator-cover{
+
+    overflow:hidden;
+
+}
+
+.creator-cover img{
+
+    transition:transform .8s;
+
+}
+
+.creator-card:hover img{
+
+    transform:scale(1.08);
+
+}
+        /*==================================================
+            MOVIX ANIMATIONS
+            PART 2
+==================================================*/
+
+
+/*==================================================
+                HERO GRADIENT
+==================================================*/
+
+.hero::before,
+.hero::after{
+
+    animation:heroGradient 14s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroGradient{
+
+    0%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(40px,-30px) scale(1.08);
+
+    }
+
+    100%{
+
+        transform:translate(-30px,25px) scale(.95);
+
+    }
+
+}
+
+
+
+/*==================================================
+                FLOATING CARDS
+==================================================*/
+
+.hero-card{
+
+    animation:floatingCard 7s ease-in-out infinite;
+
+}
+
+.card-one{
+
+    animation-delay:0s;
+
+}
+
+.card-two{
+
+    animation-delay:1.5s;
+
+}
+
+.card-three{
+
+    animation-delay:3s;
+
+}
+
+@keyframes floatingCard{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-16px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                LOGO HOVER
+==================================================*/
+
+.brand{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s,
+
+        filter .35s;
+
+}
+
+.brand:hover{
+
+    transform:translateY(-8px);
+
+    filter:brightness(1.05);
+
+}
+
+
+
+/*==================================================
+                ICON ROTATE
+==================================================*/
+
+.icon-box,
+.service-icon,
+.module-icon,
+.eco-icon{
+
+    transition:
+
+        transform .45s var(--ease);
+
+}
+
+.service-card:hover .service-icon,
+.module-card:hover .module-icon,
+.eco-card:hover .eco-icon{
+
+    transform:
+
+        rotate(-8deg)
+
+        scale(1.08);
+
+}
+
+
+
+/*==================================================
+                BADGE POP
+==================================================*/
+
+.badge{
+
+    transition:.35s;
+
+}
+
+.badge:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*==================================================
+                BUTTON PRESS
+==================================================*/
+
+.btn:active{
+
+    transform:scale(.96);
+
+}
+
+
+
+/*==================================================
+                DASHBOARD CARD
+==================================================*/
+
+.dashboard-card{
+
+    transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:
+
+        translateY(-8px)
+
+        scale(1.02);
+
+}
+
+
+
+/*==================================================
+                AI RESPONSE
+==================================================*/
+
+.response{
+
+    animation:responseGlow 4s infinite;
+
+}
+
+@keyframes responseGlow{
+
+    0%{
+
+        box-shadow:
+
+            0 0 0 rgba(227,30,36,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 45px rgba(227,30,36,.22);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            0 0 0 rgba(227,30,36,.18);
+
+    }
+
+}
+
+
+
+/*==================================================
+                SECTION REVEAL
+==================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+
+        opacity .9s,
+
+        transform .9s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/*==================================================
+                NUMBER POP
+==================================================*/
+
+.stats-card h3{
+
+    transition:.35s;
+
+}
+
+.stats-card:hover h3{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*==================================================
+                REVIEW HOVER
+==================================================*/
+
+.review-card:hover{
+
+    rotate:-1deg;
+
+}
+
+
+
+/*==================================================
+                CTA GLOW
+==================================================*/
+
+.cta-box{
+
+    animation:ctaGlow 5s infinite;
+
+}
+
+@keyframes ctaGlow{
+
+    0%{
+
+        box-shadow:
+
+            0 35px 80px rgba(227,30,36,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 45px 120px rgba(227,30,36,.28);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+            0 35px 80px rgba(227,30,36,.18);
+
+    }
+
+}
+
+
+
+/*==================================================
+                SCROLL INDICATOR
+==================================================*/
+
+.scroll-indicator{
+
+    animation:scrollFloat 2.5s infinite;
+
+}
+
+@keyframes scrollFloat{
+
+    0%{
+
+        transform:
+
+            translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:
+
+            translate(-50%,-8px);
+
+    }
+
+    100%{
+
+        transform:
+
+            translate(-50%,0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                FADE STAGGER
+==================================================*/
+
+.delay-1{
+
+    animation-delay:.15s;
+
+}
+
+.delay-2{
+
+    animation-delay:.30s;
+
+}
+
+.delay-3{
+
+    animation-delay:.45s;
+
+}
+
+.delay-4{
+
+    animation-delay:.60s;
+
+}
+
+.delay-5{
+
+    animation-delay:.75s;
+
+}
+        /*==================================================
+            MOVIX ANIMATIONS
+            PART 3
+==================================================*/
+
+
+/*==================================================
+                MESH BACKGROUND
+==================================================*/
+
+.mesh-animation{
+
+    animation:meshMove 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes meshMove{
+
+    0%{
+
+        transform:translate3d(0,0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate3d(40px,-20px,0) scale(1.08);
+
+    }
+
+    100%{
+
+        transform:translate3d(-35px,30px,0) scale(.95);
+
+    }
+
+}
+
+
+
+/*==================================================
+                PARALLAX
+==================================================*/
+
+.parallax{
+
+    transition:transform .15s linear;
+
+    will-change:transform;
+
+}
+
+
+
+/*==================================================
+                IMAGE FLOAT
+==================================================*/
+
+.hero-image{
+
+    animation:heroFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==================================================
+                ICON BOUNCE
+==================================================*/
+
+.module-card:hover .module-icon,
+
+.service-card:hover .service-icon,
+
+.stats-card:hover .stats-icon{
+
+    animation:bounce .8s;
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    30%{
+
+        transform:scale(1.15);
+
+    }
+
+    50%{
+
+        transform:scale(.95);
+
+    }
+
+    70%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/*==================================================
+                CARD GLOW
+==================================================*/
+
+.glass-card:hover{
+
+    box-shadow:
+
+        0 30px 70px rgba(255,255,255,.35),
+
+        0 30px 80px rgba(227,30,36,.18);
+
+}
+
+
+
+/*==================================================
+                LINK UNDERLINE
+==================================================*/
+
+.navbar a{
+
+    overflow:hidden;
+
+}
+
+.navbar a::after{
+
+    transition:width .35s ease;
+
+}
+
+
+
+/*==================================================
+                IMAGE SHINE
+==================================================*/
+
+.creator-cover{
+
+    position:relative;
+
+}
+
+.creator-cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:50%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.45),
+
+            transparent
+
+        );
+
+    transform:skewX(-20deg);
+
+}
+
+.creator-card:hover .creator-cover::before{
+
+    animation:shine 1s;
+
+}
+
+@keyframes shine{
+
+    100%{
+
+        left:150%;
+
+    }
+
+}
+
+
+
+/*==================================================
+                SCALE ON SCROLL
+==================================================*/
+
+.scale-reveal{
+
+    opacity:0;
+
+    transform:scale(.9);
+
+    transition:
+
+        opacity .8s,
+
+        transform .8s;
+
+}
+
+.scale-reveal.active{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+
+/*==================================================
+                BLUR REVEAL
+==================================================*/
+
+.blur-reveal{
+
+    opacity:0;
+
+    filter:blur(12px);
+
+    transition:
+
+        opacity .9s,
+
+        filter .9s;
+
+}
+
+.blur-reveal.active{
+
+    opacity:1;
+
+    filter:blur(0);
+
+}
+
+
+
+/*==================================================
+                ROTATE REVEAL
+==================================================*/
+
+.rotate-reveal{
+
+    opacity:0;
+
+    transform:
+
+        rotate(-4deg)
+
+        translateY(50px);
+
+    transition:.9s;
+
+}
+
+.rotate-reveal.active{
+
+    opacity:1;
+
+    transform:
+
+        rotate(0)
+
+        translateY(0);
+
+}
+
+
+
+/*==================================================
+                FADE SCALE
+==================================================*/
+
+.fade-scale{
+
+    opacity:0;
+
+    transform:
+
+        scale(.95)
+
+        translateY(40px);
+
+    transition:.8s;
+
+}
+
+.fade-scale.active{
+
+    opacity:1;
+
+    transform:
+
+        scale(1)
+
+        translateY(0);
+
+}
+
+
+
+/*==================================================
+                LOADING DOTS
+==================================================*/
+
+.loading-dots{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.loading-dots span{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    animation:dots .9s infinite alternate;
+
+}
+
+.loading-dots span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.loading-dots span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes dots{
+
+    to{
+
+        transform:translateY(-8px);
+
+        opacity:.5;
+
+    }
+
+}
+
+
+
+/*==================================================
+                INFINITE ROTATE
+==================================================*/
+
+.rotate{
+
+    animation:rotate 18s linear infinite;
+
+}
+
+@keyframes rotate{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/*==================================================
+                DISABLE ANIMATION
+==================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+        /*==================================================
+            MOVIX RESPONSIVE
+            PART 2
+==================================================*/
+
+
+/*=========================================
+            MOBILE
+=========================================*/
+
+@media (max-width:768px){
+
+.container{
+
+    width:min(94%,100%);
+
+}
+
+.section{
+
+    padding:80px 0;
+
+}
+
+.hero{
+
+    padding-top:130px;
+
+}
+
+.hero-title{
+
+    font-size:42px;
+
+    line-height:1.15;
+
+}
+
+.hero-description{
+
+    font-size:17px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+    width:100%;
+
+}
+
+.hero-users{
+
+    flex-direction:column;
+
+}
+
+.hero-card{
+
+    display:none;
+
+}
+
+.header{
+
+    padding:16px 0;
+
+}
+
+.navbar{
+
+    display:none;
+
+}
+
+.header-actions{
+
+    gap:10px;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+}
+
+.logo img{
+
+    height:42px;
+
+}
+
+.section-header{
+
+    margin-bottom:55px;
+
+}
+
+.section-header h2{
+
+    font-size:36px;
+
+}
+
+.section-header p{
+
+    font-size:16px;
+
+}
+
+.stats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.modules-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.integration-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.trusted-logos{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.testimonials-slider{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.cta-box{
+
+    padding:50px 30px;
+
+}
+
+.cta-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.ai-features{
+
+    grid-template-columns:1fr;
+
+}
+
+.marketplace-grid{
+
+    gap:25px;
+
+}
+
+.creator-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.preview-tabs{
+
+    justify-content:flex-start;
+
+    overflow:auto;
+
+    flex-wrap:nowrap;
+
+    padding-bottom:8px;
+
+}
+
+.preview-tabs::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+}
+
+
+
+/*=========================================
+        SMALL MOBILE
+=========================================*/
+
+@media (max-width:576px){
+
+.hero-title{
+
+    font-size:34px;
+
+}
+
+.section-header h2{
+
+    font-size:30px;
+
+}
+
+.price{
+
+    font-size:48px;
+
+}
+
+.dashboard-main{
+
+    padding:20px;
+
+}
+
+.dashboard-card{
+
+    padding:22px;
+
+}
+
+.review-card{
+
+    padding:25px;
+
+}
+
+.service-card{
+
+    padding:28px;
+
+}
+
+.eco-card{
+
+    padding:28px;
+
+}
+
+.creator-body{
+
+    padding:22px;
+
+}
+
+.auth-card{
+
+    padding:30px;
+
+}
+
+.footer{
+
+    text-align:center;
+
+}
+
+.footer-bottom{
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.footer-bottom div{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.cta-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.integration-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+/*=========================================
+        EXTRA SMALL
+=========================================*/
+
+@media (max-width:420px){
+
+.hero-title{
+
+    font-size:30px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.hero-buttons{
+
+    width:100%;
+
+}
+
+.badge{
+
+    font-size:12px;
+
+}
+
+.stats-card h3{
+
+    font-size:38px;
+
+}
+
+.price{
+
+    font-size:40px;
+
+}
+
+.module-icon{
+
+    width:68px;
+
+    height:68px;
+
+    font-size:28px;
+
+}
+
+.service-icon{
+
+    width:68px;
+
+    height:68px;
+
+    font-size:28px;
+
+}
+
+.eco-icon{
+
+    width:68px;
+
+    height:68px;
+
+    font-size:28px;
+
+}
+
+.hero-image img{
+
+    border-radius:22px;
+
+}
+
+.dashboard-preview{
+
+    border-radius:24px;
+
+}
+
+}
+
+
+
+/*=========================================
+        VERY SMALL
+=========================================*/
+
+@media (max-width:360px){
+
+.hero-title{
+
+    font-size:26px;
+
+}
+
+.section-header h2{
+
+    font-size:26px;
+
+}
+
+.btn{
+
+    padding:14px 20px;
+
+}
+
+.container{
+
+    width:96%;
+
+}
+
+.logo{
+
+    font-size:20px;
+
+}
+
+.logo img{
+
+    height:36px;
+
+}
+
+}
+        /*==================================================
+            MOVIX RESPONSIVE
+            PART 4 (FINAL)
+==================================================*/
+
+
+/*=========================================
+        LARGE SCREENS (2K / 4K)
+=========================================*/
+
+@media (min-width:1600px){
+
+.container{
+
+    max-width:1500px;
+
+}
+
+.hero-title{
+
+    font-size:84px;
+
+}
+
+.section{
+
+    padding:180px 0;
+
+}
+
+.hero-description{
+
+    max-width:720px;
+
+    font-size:22px;
+
+}
+
+.dashboard-preview{
+
+    max-width:1550px;
+
+    margin:auto;
+
+}
+
+}
+
+
+
+/*=========================================
+        ULTRA WIDE
+=========================================*/
+
+@media (min-width:2000px){
+
+body{
+
+    font-size:18px;
+
+}
+
+.container{
+
+    max-width:1700px;
+
+}
+
+.hero-title{
+
+    font-size:96px;
+
+}
+
+}
+
+
+
+/*=========================================
+        LANDSCAPE MOBILE
+=========================================*/
+
+@media (max-height:600px) and (orientation:landscape){
+
+.hero{
+
+    min-height:auto;
+
+    padding:120px 0 80px;
+
+}
+
+.section{
+
+    padding:70px 0;
+
+}
+
+.hero-title{
+
+    font-size:42px;
+
+}
+
+.hero-image{
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+}
+
+
+
+/*=========================================
+        TOUCH DEVICES
+=========================================*/
+
+@media (hover:none){
+
+.btn:hover,
+
+.card:hover,
+
+.service-card:hover,
+
+.review-card:hover,
+
+.module-card:hover,
+
+.eco-card:hover{
+
+    transform:none;
+
+}
+
+}
+
+
+
+/*=========================================
+        PRINT
+=========================================*/
+
+@media print{
+
+.header,
+
+.footer,
+
+.mobile-menu,
+
+.mobile-overlay,
+
+.cta-section,
+
+.scroll-indicator{
+
+    display:none !important;
+
+}
+
+body{
+
+    background:#fff;
+
+    color:#000;
+
+}
+
+.section{
+
+    padding:20px 0;
+
+    break-inside:avoid;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:#000;
+
+}
+
+}
+
+
+
+/*=========================================
+        HIGH CONTRAST
+=========================================*/
+
+@media (prefers-contrast:more){
+
+:root{
+
+    --border:#000;
+
+}
+
+.btn{
+
+    border:2px solid currentColor;
+
+}
+
+.card,
+
+.service-card,
+
+.review-card{
+
+    border-width:2px;
+
+}
+
+}
+
+
+
+/*=========================================
+        DARK MODE SUPPORT
+=========================================*/
+
+@media (prefers-color-scheme:dark){
+
+html.auto-dark{
+
+    color-scheme:dark;
+
+}
+
+}
+
+
+
+/*=========================================
+        SAFE AREA
+=========================================*/
+
+.header{
+
+    padding-top:env(safe-area-inset-top);
+
+}
+
+.footer{
+
+    padding-bottom:env(safe-area-inset-bottom);
+
+}
+
+
+
+/*=========================================
+        REDUCED MOTION
+=========================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+
+
+/*=========================================
+        IMAGE OPTIMIZATION
+=========================================*/
+
+img{
+
+    image-rendering:auto;
+
+}
+
+
+
+/*=========================================
+        VIDEO
+=========================================*/
+
+video{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+/*=========================================
+        CANVAS
+=========================================*/
+
+canvas{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+
+/*=========================================
+        SVG
+=========================================*/
+
+svg{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+/*=========================================
+        LONG TABLES
+=========================================*/
+
+.table-responsive{
+
+    scrollbar-width:thin;
+
+}
+
+
+
+/*=========================================
+        HIDE OVERFLOW
+=========================================*/
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+
+/*=========================================
+        SELECTION
+=========================================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+
+/*=========================================
+        FOCUS
+=========================================*/
+
+:focus-visible{
+
+    outline:3px solid rgba(227,30,36,.35);
+
+    outline-offset:3px;
+
+}
+
+
+
+/*=========================================
+        SMOOTH IMAGES
+=========================================*/
+
+img{
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+
+}
+
+
+
+/*=========================================
+        END
+=========================================*/
+        /*==================================================
+        MOVIX UI FRAMEWORK
+        Version : 1.0.0
+        Author  : MOVIX
+==================================================*/
+
+
+/*=========================================
+            GOOGLE FONTS
+=========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+
+/*=========================================
+            CORE FILES
+=========================================*/
+
+@import url("01-reset.css");
+
+@import url("02-variables.css");
+
+@import url("03-layout.css");
+
+@import url("04-components.css");
+
+@import url("05-sections.css");
+
+@import url("06-animations.css");
+
+@import url("07-responsive.css");
+
+
+/*=========================================
+            GLOBAL STYLES
+=========================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--font-main);
+
+    background:var(--body-bg);
+
+    color:var(--text-primary);
+
+    overflow-x:hidden;
+
+}
+
+section{
+
+    position:relative;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:var(--text-primary);
+
+    font-family:var(--font-heading);
+
+    font-weight:700;
+
+    line-height:1.15;
+
+}
+
+h1{
+
+    font-size:var(--h1);
+
+}
+
+h2{
+
+    font-size:var(--h2);
+
+}
+
+h3{
+
+    font-size:var(--h3);
+
+}
+
+h4{
+
+    font-size:var(--h4);
+
+}
+
+h5{
+
+    font-size:var(--h5);
+
+}
+
+h6{
+
+    font-size:var(--h6);
+
+}
+
+p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+
+img{
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+a{
+
+    transition:.3s;
+
+}
+
+button{
+
+    transition:.3s;
+
+}
+
+input{
+
+    transition:.3s;
+
+}
+
+textarea{
+
+    transition:.3s;
+
+}
+
+::placeholder{
+
+    color:var(--gray-400);
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+
+/*=========================================
+            HELPERS
+=========================================*/
+
+.shadow{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.rounded{
+
+    border-radius:var(--radius-lg);
+
+}
+
+.glass{
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.7);
+
+}
+
+.gradient-text{
+
+    background:var(--gradient-primary);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+
+}
+
+.text-primary{
+
+    color:var(--primary);
+
+}
+
+.text-muted{
+
+    color:var(--text-muted);
+
+}
+
+.bg-white{
+
+    background:#fff;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+/*==================================================
+            MOVIX HEADER
+==================================================*/
+
+"use strict";
+
+const Header={
+
+    header:null,
+
+    links:[],
+
+    lastScroll:0,
+
+    progress:null,
+
+    init(){
+
+        this.header=document.querySelector(".header");
+
+        this.links=document.querySelectorAll(".navbar a");
+
+        this.createProgressBar();
+
+        this.scrollEffect();
+
+        this.activeLinks();
+
+        this.smoothScroll();
+
+        this.hideOnScroll();
+
+    },
+
+
+
+/*=========================================
+        PROGRESS BAR
+=========================================*/
+
+    createProgressBar(){
+
+        this.progress=document.createElement("div");
+
+        this.progress.className="scroll-progress";
+
+        document.body.appendChild(this.progress);
+
+    },
+
+
+
+/*=========================================
+        SCROLL EFFECT
+=========================================*/
+
+    scrollEffect(){
+
+        window.addEventListener("scroll",()=>{
+
+            const scroll=window.scrollY;
+
+            if(scroll>40){
+
+                this.header.classList.add("scrolled");
+
+            }else{
+
+                this.header.classList.remove("scrolled");
+
+            }
+
+            this.updateProgress();
+
+        });
+
+    },
+
+
+
+/*=========================================
+        PROGRESS
+=========================================*/
+
+    updateProgress(){
+
+        const height=
+
+        document.documentElement.scrollHeight-
+
+        window.innerHeight;
+
+        const progress=
+
+        (window.scrollY/height)*100;
+
+        this.progress.style.width=
+
+        progress+"%";
+
+    },
+
+
+
+/*=========================================
+        ACTIVE LINKS
+=========================================*/
+
+    activeLinks(){
+
+        const sections=
+
+        document.querySelectorAll("section[id]");
+
+        window.addEventListener("scroll",()=>{
+
+            let current="";
+
+            sections.forEach(section=>{
+
+                const top=
+
+                section.offsetTop-140;
+
+                const height=
+
+                section.offsetHeight;
+
+                if(window.scrollY>=top){
+
+                    current=section.id;
+
+                }
+
+            });
+
+            this.links.forEach(link=>{
+
+                link.classList.remove("active");
+
+                if(
+
+                link.getAttribute("href")==="#"+current
+
+                ){
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+        });
+
+    },
+
+
+
+/*=========================================
+        SMOOTH SCROLL
+=========================================*/
+
+    smoothScroll(){
+
+        this.links.forEach(link=>{
+
+            link.addEventListener("click",(e)=>{
+
+                const href=
+
+                link.getAttribute("href");
+
+                if(!href.startsWith("#"))
+
+                return;
+
+                e.preventDefault();
+
+                document.querySelector(href)
+
+                ?.scrollIntoView({
+
+                    behavior:"smooth"
+
+                });
+
+            });
+
+        });
+
+    },
+
+
+
+/*=========================================
+        HIDE HEADER
+=========================================*/
+
+    hideOnScroll(){
+
+        window.addEventListener("scroll",()=>{
+
+            const current=
+
+            window.pageYOffset;
+
+            if(current>this.lastScroll
+
+            &&current>150){
+
+                this.header.style.transform=
+
+                "translateY(-100%)";
+
+            }else{
+
+                this.header.style.transform=
+
+                "translateY(0)";
+
+            }
+
+            this.lastScroll=current;
+
+        });
+
+    }
+
+};
+                    
  <style>
