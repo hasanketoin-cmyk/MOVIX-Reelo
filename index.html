@@ -12414,5 +12414,631 @@ src="../../assets/js/app.js"></script>
     </div>
 
 </section>
+            /*==================================================
+            MOVIX CHARTS
+==================================================*/
+
+"use strict";
+
+const Charts = {
+
+    colors: {
+
+        primary: "#E31E24",
+
+        secondary: "#111827",
+
+        success: "#22C55E",
+
+        warning: "#F59E0B",
+
+        danger: "#EF4444",
+
+        border: "#E8EDF4"
+
+    },
+
+
+
+    init() {
+
+        this.revenue();
+
+        this.campaigns();
+
+        this.users();
+
+        this.marketplace();
+
+    },
+
+
+
+/*=========================================
+        REVENUE
+=========================================*/
+
+    revenue() {
+
+        const canvas =
+
+        document.getElementById("revenueChart");
+
+        if (!canvas) return;
+
+        new Chart(canvas, {
+
+            type: "line",
+
+            data: {
+
+                labels: [
+
+                    "Jan","Feb","Mar","Apr",
+
+                    "May","Jun","Jul",
+
+                    "Aug","Sep","Oct",
+
+                    "Nov","Dec"
+
+                ],
+
+                datasets: [{
+
+                    label: "Revenue",
+
+                    data: [
+
+                        18,22,25,24,
+
+                        32,36,40,
+
+                        38,44,48,
+
+                        56,64
+
+                    ],
+
+                    borderColor: this.colors.primary,
+
+                    borderWidth: 3,
+
+                    fill: true,
+
+                    backgroundColor:
+
+                    "rgba(227,30,36,.08)",
+
+                    tension: .4,
+
+                    pointRadius: 4,
+
+                    pointHoverRadius: 6
+
+                }]
+
+            },
+
+            options: this.options()
+
+        });
+
+    },
+
+
+
+/*=========================================
+        CAMPAIGNS
+=========================================*/
+
+    campaigns() {
+
+        const chart =
+
+        document.getElementById("campaignChart");
+
+        if (!chart) return;
+
+        new Chart(chart, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+
+                    "Google",
+
+                    "Meta",
+
+                    "TikTok",
+
+                    "Snap"
+
+                ],
+
+                datasets: [{
+
+                    data: [
+
+                        32,
+
+                        48,
+
+                        22,
+
+                        15
+
+                    ],
+
+                    backgroundColor: [
+
+                        "#E31E24",
+
+                        "#2563EB",
+
+                        "#22C55E",
+
+                        "#F59E0B"
+
+                    ],
+
+                    borderRadius: 10
+
+                }]
+
+            },
+
+            options: this.options()
+
+        });
+
+    },
+
+
+
+/*=========================================
+        USERS
+=========================================*/
+
+    users() {
+
+        const chart =
+
+        document.getElementById("usersChart");
+
+        if (!chart) return;
+
+        new Chart(chart, {
+
+            type: "doughnut",
+
+            data: {
+
+                labels: [
+
+                    "Creators",
+
+                    "Companies",
+
+                    "Agencies"
+
+                ],
+
+                datasets: [{
+
+                    data: [
+
+                        55,
+
+                        30,
+
+                        15
+
+                    ],
+
+                    backgroundColor: [
+
+                        "#E31E24",
+
+                        "#2563EB",
+
+                        "#22C55E"
+
+                    ]
+
+                }]
+
+            },
+
+            options: this.options()
+
+        });
+
+    },
+
+
+
+/*=========================================
+        MARKETPLACE
+=========================================*/
+
+    marketplace() {
+
+        const chart =
+
+        document.getElementById("marketplaceChart");
+
+        if (!chart) return;
+
+        new Chart(chart, {
+
+            type: "radar",
+
+            data: {
+
+                labels: [
+
+                    "Reach",
+
+                    "ROI",
+
+                    "CTR",
+
+                    "Sales",
+
+                    "Leads"
+
+                ],
+
+                datasets: [{
+
+                    data: [
+
+                        82,
+
+                        94,
+
+                        71,
+
+                        90,
+
+                        88
+
+                    ],
+
+                    borderColor:
+
+                    this.colors.primary,
+
+                    backgroundColor:
+
+                    "rgba(227,30,36,.12)"
+
+                }]
+
+            },
+
+            options: this.options()
+
+        });
+
+    },
+
+
+
+/*=========================================
+        OPTIONS
+=========================================*/
+
+    options() {
+
+        return {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                }
+
+            },
+
+            scales: {
+
+                x: {
+
+                    grid: {
+
+                        display: false
+
+                    }
+
+                },
+
+                y: {
+
+                    grid: {
+
+                        color: this.colors.border
+
+                    }
+
+                }
+
+            }
+
+        };
+
+    }
+
+};
+            /*==================================================
+            MOVIX AUTH SYSTEM
+==================================================*/
+
+"use strict";
+
+const Auth = {
+
+    form: null,
+
+    submitButton: null,
+
+    isSubmitting: false,
+
+    init() {
+
+        this.form = document.getElementById("loginForm");
+
+        if (!this.form) return;
+
+        this.submitButton = this.form.querySelector("button[type='submit']");
+
+        this.bindEvents();
+
+    },
+
+
+
+    /*=========================================
+                EVENTS
+    =========================================*/
+
+    bindEvents() {
+
+        this.form.addEventListener("submit", (e) => {
+
+            e.preventDefault();
+
+            this.login();
+
+        });
+
+    },
+
+
+
+    /*=========================================
+                LOGIN
+    =========================================*/
+
+    async login() {
+
+        if (this.isSubmitting) return;
+
+        const email = this.form.querySelector("input[type='email']").value.trim();
+
+        const password = this.form.querySelector("input[type='password']").value;
+
+        if (!this.validate(email, password)) return;
+
+        this.loading(true);
+
+        try {
+
+            /*======================================
+                API REQUEST
+            ======================================*/
+
+            const response = await this.fakeRequest({
+
+                email,
+
+                password
+
+            });
+
+            Toast.show({
+
+                type: "success",
+
+                title: "Welcome",
+
+                message: "Login successful."
+
+            });
+
+            localStorage.setItem(
+
+                "movix-user",
+
+                JSON.stringify(response.user)
+
+            );
+
+            setTimeout(() => {
+
+                window.location.href =
+
+                "../dashboard/index.html";
+
+            }, 800);
+
+        }
+
+        catch (error) {
+
+            Toast.show({
+
+                type: "error",
+
+                title: "Login Failed",
+
+                message: error.message
+
+            });
+
+        }
+
+        finally {
+
+            this.loading(false);
+
+        }
+
+    },
+
+
+
+    /*=========================================
+                VALIDATION
+    =========================================*/
+
+    validate(email, password) {
+
+        if (!email) {
+
+            Toast.show({
+
+                type: "warning",
+
+                title: "Email Required",
+
+                message: "Please enter your email."
+
+            });
+
+            return false;
+
+        }
+
+        if (!password) {
+
+            Toast.show({
+
+                type: "warning",
+
+                title: "Password Required",
+
+                message: "Please enter your password."
+
+            });
+
+            return false;
+
+        }
+
+        return true;
+
+    },
+
+
+
+    /*=========================================
+                LOADING
+    =========================================*/
+
+    loading(state) {
+
+        this.isSubmitting = state;
+
+        if (!this.submitButton) return;
+
+        if (state) {
+
+            this.submitButton.disabled = true;
+
+            this.submitButton.innerHTML =
+
+                "Signing in...";
+
+        } else {
+
+            this.submitButton.disabled = false;
+
+            this.submitButton.innerHTML =
+
+                "Sign In";
+
+        }
+
+    },
+
+
+
+    /*=========================================
+                DEMO API
+    =========================================*/
+
+    fakeRequest(data) {
+
+        return new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+
+                if (
+
+                    data.email === "admin@movix.com" &&
+
+                    data.password === "123456"
+
+                ) {
+
+                    resolve({
+
+                        token: "movix-demo-token",
+
+                        user: {
+
+                            id: 1,
+
+                            name: "Administrator",
+
+                            email: data.email,
+
+                            role: "Admin"
+
+                        }
+
+                    });
+
+                } else {
+
+                    reject(
+
+                        new Error(
+
+                            "Incorrect email or password."
+
+                        )
+
+                    );
+
+                }
+
+            }, 1200);
+
+        });
+
+    }
+
+};
                     
  <style>
