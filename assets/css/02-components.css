@@ -1098,3 +1098,576 @@
     margin-bottom:4px;
 
 }
+/*======================================================
+        MOVIX COMPONENTS
+        PART 3
+======================================================*/
+
+
+/*======================================================
+                FORM SYSTEM
+======================================================*/
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+}
+
+.form-label{
+
+    font-weight:700;
+
+    color:var(--secondary);
+
+}
+
+.form-control{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 22px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+    font-size:15px;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 0 0 4px rgba(225,29,46,.10);
+
+}
+
+textarea.form-control{
+
+    height:170px;
+
+    resize:none;
+
+    padding:18px 22px;
+
+}
+
+
+
+/*======================================================
+                SEARCH BOX
+======================================================*/
+
+.search-box{
+
+    position:relative;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    height:58px;
+
+    padding-right:58px;
+
+}
+
+.search-box i{
+
+    position:absolute;
+
+    right:22px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#94A3B8;
+
+}
+
+
+
+/*======================================================
+                SELECT
+======================================================*/
+
+.select{
+
+    appearance:none;
+
+    cursor:pointer;
+
+}
+
+
+
+/*======================================================
+                CHECKBOX
+======================================================*/
+
+.checkbox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+}
+
+.checkbox input{
+
+    width:22px;
+
+    height:22px;
+
+}
+
+
+
+/*======================================================
+                SWITCH
+======================================================*/
+
+.switch{
+
+    position:relative;
+
+    width:58px;
+
+    height:30px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#CBD5E1;
+
+    border-radius:999px;
+
+    transition:.35s;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    top:3px;
+
+    right:4px;
+
+    transition:.35s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:var(--primary);
+
+}
+
+.switch input:checked + .slider::before{
+
+    transform:translateX(-28px);
+
+}
+
+
+
+/*======================================================
+                TABLE
+======================================================*/
+
+.table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.table thead{
+
+    background:#F8FAFC;
+
+}
+
+.table th{
+
+    padding:18px;
+
+    text-align:right;
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+}
+
+.table td{
+
+    padding:18px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.table tbody tr{
+
+    transition:.25s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+
+
+/*======================================================
+                FILTER BAR
+======================================================*/
+
+.filter-bar{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/*======================================================
+                MODAL
+======================================================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.55);
+
+    backdrop-filter:blur(8px);
+
+    z-index:99999;
+
+}
+
+.modal.active{
+
+    display:flex;
+
+}
+
+.modal-box{
+
+    width:min(700px,92%);
+
+    background:#fff;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.modal-header{
+
+    padding:28px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.modal-body{
+
+    padding:30px;
+
+}
+
+.modal-footer{
+
+    padding:24px 30px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    border-top:1px solid var(--border);
+
+}
+
+
+
+/*======================================================
+                ALERT
+======================================================*/
+
+.alert{
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:18px;
+
+}
+
+.alert-success{
+
+    background:#ECFDF5;
+
+    color:#166534;
+
+}
+
+.alert-warning{
+
+    background:#FEF3C7;
+
+    color:#92400E;
+
+}
+
+.alert-danger{
+
+    background:#FEE2E2;
+
+    color:#991B1B;
+
+}
+
+
+
+/*======================================================
+                TOAST
+======================================================*/
+
+.toast{
+
+    position:fixed;
+
+    left:30px;
+
+    bottom:30px;
+
+    min-width:320px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow-lg);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    z-index:999999;
+
+}
+
+
+
+/*======================================================
+                LOADER
+======================================================*/
+
+.loader{
+
+    width:56px;
+
+    height:56px;
+
+    border:4px solid #E2E8F0;
+
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/*======================================================
+            EMPTY STATE
+======================================================*/
+
+.empty-state{
+
+    padding:80px 40px;
+
+    text-align:center;
+
+}
+
+.empty-state img{
+
+    width:180px;
+
+    margin:auto;
+
+    margin-bottom:30px;
+
+}
+
+.empty-state h3{
+
+    margin-bottom:15px;
+
+}
+
+.empty-state p{
+
+    max-width:450px;
+
+    margin:auto;
+
+}
+
+
+
+/*======================================================
+            DROPDOWN
+======================================================*/
+
+.dropdown{
+
+    position:relative;
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:110%;
+
+    right:0;
+
+    width:240px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-md);
+
+    border:1px solid var(--border);
+
+    padding:10px;
+
+    display:none;
+
+}
+
+.dropdown.active .dropdown-menu{
+
+    display:block;
+
+}
+
+.dropdown-menu a{
+
+    display:block;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+}
+
+.dropdown-menu a:hover{
+
+    background:#F8FAFC;
+
+    color:var(--primary);
+
+}
