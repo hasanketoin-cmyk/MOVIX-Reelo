@@ -13040,5 +13040,212 @@ const Auth = {
     }
 
 };
+            /*==================================================
+                MOVIX API
+==================================================*/
+
+"use strict";
+
+const API = {
+
+    baseURL: CONFIG.api || "",
+
+    token: localStorage.getItem("movix-token") || null,
+
+    headers() {
+
+        const headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        };
+
+        if (this.token) {
+
+            headers.Authorization =
+                `Bearer ${this.token}`;
+
+        }
+
+        return headers;
+
+    },
+
+
+
+/*=========================================
+            REQUEST
+=========================================*/
+
+    async request(
+
+        url,
+
+        options = {}
+
+    ) {
+
+        const config = {
+
+            method: options.method || "GET",
+
+            headers: {
+
+                ...this.headers(),
+
+                ...(options.headers || {})
+
+            }
+
+        };
+
+        if (options.body) {
+
+            config.body =
+
+                JSON.stringify(options.body);
+
+        }
+
+        try {
+
+            const response = await fetch(
+
+                this.baseURL + url,
+
+                config
+
+            );
+
+            if (!response.ok) {
+
+                throw new Error(
+
+                    response.statusText
+
+                );
+
+            }
+
+            return await response.json();
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            throw error;
+
+        }
+
+    },
+
+
+
+/*=========================================
+            GET
+=========================================*/
+
+    get(url) {
+
+        return this.request(url);
+
+    },
+
+
+
+/*=========================================
+            POST
+=========================================*/
+
+    post(url, body) {
+
+        return this.request(url, {
+
+            method: "POST",
+
+            body
+
+        });
+
+    },
+
+
+
+/*=========================================
+            PUT
+=========================================*/
+
+    put(url, body) {
+
+        return this.request(url, {
+
+            method: "PUT",
+
+            body
+
+        });
+
+    },
+
+
+
+/*=========================================
+            DELETE
+=========================================*/
+
+    delete(url) {
+
+        return this.request(url, {
+
+            method: "DELETE"
+
+        });
+
+    },
+
+
+
+/*=========================================
+            TOKEN
+=========================================*/
+
+    setToken(token) {
+
+        this.token = token;
+
+        localStorage.setItem(
+
+            "movix-token",
+
+            token
+
+        );
+
+    },
+
+
+
+    logout() {
+
+        localStorage.removeItem(
+
+            "movix-token"
+
+        );
+
+        localStorage.removeItem(
+
+            "movix-user"
+
+        );
+
+        location.href =
+
+        "../auth/login.html";
+
+    }
+
+};
                     
  <style>
