@@ -11585,5 +11585,834 @@ src="../../assets/js/app.js"></script>
     font-size:14px;
 
 }
+            <!-- ==========================================
+                MOVIX TOPBAR
+========================================== -->
+
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <button class="mobile-sidebar-btn">
+
+            <i data-lucide="menu"></i>
+
+        </button>
+
+        <div class="global-search">
+
+            <i data-lucide="search"></i>
+
+            <input
+                type="text"
+                placeholder="Search creators, companies, campaigns...">
+
+            <kbd>⌘ K</kbd>
+
+        </div>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <button class="command-btn">
+
+            <i data-lucide="sparkles"></i>
+
+            <span>AI Command</span>
+
+        </button>
+
+        <button class="icon-btn">
+
+            <i data-lucide="plus"></i>
+
+        </button>
+
+        <button class="icon-btn">
+
+            <i data-lucide="bell"></i>
+
+            <span class="notify-dot"></span>
+
+        </button>
+
+        <button class="icon-btn">
+
+            <i data-lucide="mail"></i>
+
+        </button>
+
+        <button class="icon-btn theme-toggle">
+
+            <i data-lucide="moon"></i>
+
+        </button>
+
+        <div class="user-dropdown">
+
+            <img
+                src="../../assets/images/avatar.jpg"
+                alt="User">
+
+            <div>
+
+                <h5>Hasan Ketoin</h5>
+
+                <small>Administrator</small>
+
+            </div>
+
+            <i data-lucide="chevron-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+                    <!--=========================================
+            DASHBOARD STATS
+==========================================-->
+
+<section class="dashboard-stats">
+
+    <div class="stats-grid">
+
+        <!-- Revenue -->
+
+        <article class="dashboard-stat-card revenue">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i data-lucide="wallet"></i>
+
+                </div>
+
+                <span class="stat-change positive">
+
+                    +12.8%
+
+                </span>
+
+            </div>
+
+            <h4>
+
+                Revenue
+
+            </h4>
+
+            <h2
+
+                data-counter="284520"
+
+                data-prefix="$"
+
+            >
+
+                $0
+
+            </h2>
+
+            <canvas id="revenueMiniChart"></canvas>
+
+        </article>
+
+
+
+        <!-- Campaigns -->
+
+        <article class="dashboard-stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i data-lucide="megaphone"></i>
+
+                </div>
+
+                <span class="stat-change positive">
+
+                    +8%
+
+                </span>
+
+            </div>
+
+            <h4>
+
+                Campaigns
+
+            </h4>
+
+            <h2
+
+                data-counter="324"
+
+            >
+
+                0
+
+            </h2>
+
+            <canvas id="campaignMiniChart"></canvas>
+
+        </article>
+
+
+
+        <!-- Creators -->
+
+        <article class="dashboard-stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i data-lucide="users"></i>
+
+                </div>
+
+                <span class="stat-change positive">
+
+                    +16%
+
+                </span>
+
+            </div>
+
+            <h4>
+
+                Creators
+
+            </h4>
+
+            <h2
+
+                data-counter="1862"
+
+            >
+
+                0
+
+            </h2>
+
+            <canvas id="creatorMiniChart"></canvas>
+
+        </article>
+
+
+
+        <!-- AI Score -->
+
+        <article class="dashboard-stat-card ai-score">
+
+            <div class="stat-top">
+
+                <div class="stat-icon">
+
+                    <i data-lucide="sparkles"></i>
+
+                </div>
+
+                <span class="stat-change positive">
+
+                    Excellent
+
+                </span>
+
+            </div>
+
+            <h4>
+
+                AI Score
+
+            </h4>
+
+            <h2
+
+                data-counter="98"
+
+                data-suffix="%"
+
+            >
+
+                0%
+
+            </h2>
+
+            <canvas id="aiMiniChart"></canvas>
+
+        </article>
+
+    </div>
+
+</section>
+                /*=========================================
+        DASHBOARD STATS
+=========================================*/
+
+.dashboard-content{
+
+    margin-left:290px;
+
+    padding:120px 35px 40px;
+
+}
+
+.dashboard-stats{
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-stats .stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+}
+
+.dashboard-stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    transition:.35s;
+
+}
+
+.dashboard-stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.stat-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.stat-icon{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+}
+
+.dashboard-stat-card h4{
+
+    margin-bottom:8px;
+
+    color:var(--text-muted);
+
+    font-weight:600;
+
+}
+
+.dashboard-stat-card h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+.stat-change{
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+.stat-change.positive{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.stat-change.negative{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+.dashboard-stat-card canvas{
+
+    width:100%;
+
+    height:65px;
+
+}
+                @media(max-width:1200px){
+
+.dashboard-stats .stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard-content{
+
+    margin-left:0;
+
+    padding:100px 20px 30px;
+
+}
+
+.dashboard-stats .stats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+                <!--=========================================
+        ANALYTICS SECTION
+==========================================-->
+
+<section class="dashboard-row">
+
+    <!-- LEFT SIDE -->
+
+    <div class="analytics-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <h2>
+
+                    Revenue Analytics
+
+                </h2>
+
+                <p>
+
+                    Revenue for the last 12 months
+
+                </p>
+
+            </div>
+
+            <div class="chart-filter">
+
+                <button class="active">
+
+                    12M
+
+                </button>
+
+                <button>
+
+                    6M
+
+                </button>
+
+                <button>
+
+                    30D
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <canvas id="revenueChart"></canvas>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="insights-panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                AI Insights
+
+            </h2>
+
+        </div>
+
+        <div class="insight success">
+
+            <h4>
+
+                Revenue Prediction
+
+            </h4>
+
+            <p>
+
+                AI predicts +18% revenue growth next month.
+
+            </p>
+
+        </div>
+
+        <div class="insight warning">
+
+            <h4>
+
+                Campaign Alert
+
+            </h4>
+
+            <p>
+
+                3 campaigns require optimization.
+
+            </p>
+
+        </div>
+
+        <div class="insight info">
+
+            <h4>
+
+                Marketplace
+
+            </h4>
+
+            <p>
+
+                24 new creators joined today.
+
+            </p>
+
+        </div>
+
+        <button class="btn btn-primary">
+
+            Open AI Studio
+
+        </button>
+
+    </div>
+
+</section>
+            /*=========================================
+        ANALYTICS
+=========================================*/
+
+.dashboard-row{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:24px;
+
+    margin-bottom:30px;
+
+}
+
+.analytics-panel{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    padding:30px;
+
+}
+
+.panel-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+}
+
+.chart-filter{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.chart-filter button{
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    background:#F8FAFC;
+
+}
+
+.chart-filter button.active{
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+}
+
+#revenueChart{
+
+    height:420px;
+
+}
+
+.insights-panel{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    padding:28px;
+
+}
+
+.insight{
+
+    padding:20px;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+}
+
+.insight.success{
+
+    background:#ECFDF5;
+
+}
+
+.insight.warning{
+
+    background:#FFFBEB;
+
+}
+
+.insight.info{
+
+    background:#EFF6FF;
+
+}
+            <section class="dashboard-row">
+
+    <div class="activity-panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Recent Activity
+
+            </h2>
+
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+
+                    <i data-lucide="megaphone"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        Nike Campaign
+
+                    </strong>
+
+                    <p>
+
+                        Campaign approved
+
+                    </p>
+
+                </div>
+
+                <small>
+
+                    2m ago
+
+                </small>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+
+                    <i data-lucide="users"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        New Creator
+
+                    </strong>
+
+                    <p>
+
+                        Sarah joined
+
+                    </p>
+
+                </div>
+
+                <small>
+
+                    15m
+
+                </small>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+
+                    <i data-lucide="sparkles"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        AI Generated
+
+                    </strong>
+
+                    <p>
+
+                        Campaign created
+
+                    </p>
+
+                </div>
+
+                <small>
+
+                    1h
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="quick-actions">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Quick Actions
+
+            </h2>
+
+        </div>
+
+        <button class="btn btn-primary">
+
+            New Campaign
+
+        </button>
+
+        <button class="btn btn-secondary">
+
+            Invite Creator
+
+        </button>
+
+        <button class="btn btn-secondary">
+
+            AI Generator
+
+        </button>
+
+        <button class="btn btn-secondary">
+
+            Analytics
+
+        </button>
+
+    </div>
+
+</section>
                     
  <style>
