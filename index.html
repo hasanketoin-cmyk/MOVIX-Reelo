@@ -10140,5 +10140,408 @@ const Header={
     }
 
 };
+ /*==================================================
+            MOVIX ANIMATIONS
+==================================================*/
+
+"use strict";
+
+const Animations = {
+
+    observer: null,
+
+    init() {
+
+        this.revealOnScroll();
+
+        this.parallax();
+
+        this.floating();
+
+        this.mouseGlow();
+
+    },
+
+
+
+/*=========================================
+        REVEAL ON SCROLL
+=========================================*/
+
+    revealOnScroll() {
+
+        const elements = document.querySelectorAll(
+
+            ".reveal,.fade-up,.fade-left,.fade-right,.zoom,.scale-reveal,.blur-reveal,.rotate-reveal,.fade-scale"
+
+        );
+
+        this.observer = new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                        this.observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+
+                threshold: .15
+
+            }
+
+        );
+
+        elements.forEach(el => {
+
+            this.observer.observe(el);
+
+        });
+
+    },
+
+
+
+/*=========================================
+        PARALLAX
+=========================================*/
+
+    parallax() {
+
+        const items = document.querySelectorAll(".parallax");
+
+        if (!items.length) return;
+
+        document.addEventListener("mousemove", e => {
+
+            const x =
+
+                (window.innerWidth / 2 - e.clientX) / 35;
+
+            const y =
+
+                (window.innerHeight / 2 - e.clientY) / 35;
+
+            items.forEach(item => {
+
+                const speed =
+
+                    Number(item.dataset.speed || 1);
+
+                item.style.transform =
+
+                    `translate(${x * speed}px,${y * speed}px)`;
+
+            });
+
+        });
+
+    },
+
+
+
+/*=========================================
+        FLOAT
+=========================================*/
+
+    floating() {
+
+        const items = document.querySelectorAll(".float");
+
+        items.forEach((item, index) => {
+
+            item.style.animationDelay =
+
+                `${index * .3}s`;
+
+        });
+
+    },
+
+
+
+/*=========================================
+        CURSOR GLOW
+=========================================*/
+
+    mouseGlow() {
+
+        const glow = document.createElement("div");
+
+        glow.className = "cursor-glow";
+
+        document.body.appendChild(glow);
+
+        document.addEventListener("mousemove", e => {
+
+            glow.style.left =
+
+                e.clientX + "px";
+
+            glow.style.top =
+
+                e.clientY + "px";
+
+        });
+
+    }
+
+};
+            /*==================================================
+            MOVIX COUNTER
+==================================================*/
+
+"use strict";
+
+const Counter = {
+
+    observer: null,
+
+    init() {
+
+        this.observeCounters();
+
+    },
+
+
+
+/*=========================================
+        OBSERVER
+=========================================*/
+
+    observeCounters() {
+
+        const counters = document.querySelectorAll("[data-counter]");
+
+        if (!counters.length) return;
+
+        this.observer = new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting) return;
+
+                    this.animate(entry.target);
+
+                    this.observer.unobserve(entry.target);
+
+                });
+
+            },
+
+            {
+
+                threshold: .4
+
+            }
+
+        );
+
+        counters.forEach(counter => {
+
+            this.observer.observe(counter);
+
+        });
+
+    },
+
+
+
+/*=========================================
+        ANIMATION
+=========================================*/
+
+    animate(element) {
+
+        const target = Number(
+
+            element.dataset.counter
+
+        );
+
+        const duration = CONFIG.counterSpeed;
+
+        const start = performance.now();
+
+        const prefix =
+
+            element.dataset.prefix || "";
+
+        const suffix =
+
+            element.dataset.suffix || "";
+
+        const decimals =
+
+            Number(element.dataset.decimals || 0);
+
+        const formatter =
+
+            new Intl.NumberFormat();
+
+        const update = (time) => {
+
+            const progress =
+
+                Math.min(
+
+                    (time - start) / duration,
+
+                    1
+
+                );
+
+            const value =
+
+                target * progress;
+
+            let output;
+
+            if (decimals > 0) {
+
+                output =
+
+                    value.toFixed(decimals);
+
+            } else {
+
+                output =
+
+                    formatter.format(
+
+                        Math.floor(value)
+
+                    );
+
+            }
+
+            element.textContent =
+
+                prefix +
+
+                output +
+
+                suffix;
+
+            if (progress < 1) {
+
+                requestAnimationFrame(update);
+
+            }
+
+        };
+
+        requestAnimationFrame(update);
+
+    }
+
+};
+                    /*==================================================
+            MOVIX TAB SYSTEM
+==================================================*/
+
+"use strict";
+
+const Tabs = {
+
+    init() {
+
+        this.initializeTabs();
+
+    },
+
+
+
+/*=========================================
+        INIT
+=========================================*/
+
+    initializeTabs() {
+
+        const groups = document.querySelectorAll("[data-tabs]");
+
+        groups.forEach(group => {
+
+            const buttons = group.querySelectorAll("[data-tab]");
+
+            const panels = group.querySelectorAll("[data-panel]");
+
+            if (!buttons.length || !panels.length) return;
+
+            buttons.forEach(button => {
+
+                button.addEventListener("click", () => {
+
+                    this.change(group, button);
+
+                });
+
+            });
+
+        });
+
+    },
+
+
+
+/*=========================================
+        CHANGE TAB
+=========================================*/
+
+    change(group, button) {
+
+        const target = button.dataset.tab;
+
+        const buttons = group.querySelectorAll("[data-tab]");
+
+        const panels = group.querySelectorAll("[data-panel]");
+
+        buttons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+        panels.forEach(panel => {
+
+            panel.style.display = "none";
+
+            panel.classList.remove("active");
+
+        });
+
+        const activePanel = group.querySelector(
+
+            `[data-panel="${target}"]`
+
+        );
+
+        if (!activePanel) return;
+
+        activePanel.style.display = "block";
+
+        requestAnimationFrame(() => {
+
+            activePanel.classList.add("active");
+
+        });
+
+    }
+
+};
                     
  <style>
