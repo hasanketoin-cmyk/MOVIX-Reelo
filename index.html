@@ -1,954 +1,1331 @@
+<!-- =========================
+        HEADER
+========================= -->
 
-/*==================================================
-        MOVIX UI SYSTEM V2
-        Foundation
-==================================================*/
+<header class="header">
 
-/*=========================
-        GOOGLE FONT
-=========================*/
+    <div class="container">
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Cairo:wght@200..900&display=swap");
+        <!-- Logo -->
 
+        <a href="#" class="logo">
 
-/*=========================
-        RESET
-=========================*/
+            <img src="assets/images/logo.png" alt="MOVIX">
 
-*,
-*::before,
-*::after{
+        </a>
 
-    margin:0;
-    padding:0;
+        <!-- Navigation -->
 
-    box-sizing:border-box;
+        <nav class="navbar">
 
-}
+            <ul>
 
-html{
+                <li>
+                    <a href="#" class="active">
+                        Home
+                    </a>
+                </li>
 
-    scroll-behavior:smooth;
+                <li>
+                    <a href="#">
+                        Marketplace
+                    </a>
+                </li>
 
-}
+                <li>
+                    <a href="#">
+                        Companies
+                    </a>
+                </li>
 
-body{
+                <li>
+                    <a href="#">
+                        Influencers
+                    </a>
+                </li>
 
-    font-family:"Inter","Cairo",sans-serif;
+                <li>
+                    <a href="#">
+                        Pricing
+                    </a>
+                </li>
 
-    color:#1E293B;
+                <li>
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
 
-    overflow-x:hidden;
+            </ul>
 
-    background:#F8FAFC;
+        </nav>
 
-    line-height:1.7;
+        <!-- Actions -->
 
-    position:relative;
+        <div class="header-actions">
 
-}
+            <a href="#" class="btn btn-secondary">
 
-img{
+                Login
 
-    display:block;
+            </a>
 
-    max-width:100%;
+            <a href="#" class="btn btn-primary">
 
-}
+                Get Started
 
-a{
+            </a>
 
-    text-decoration:none;
+        </div>
 
-    color:inherit;
+    </div>
 
-}
+</header>
+<!-- ===========================================
+                HERO SECTION
+============================================ -->
 
-ul{
+<section class="hero">
 
-    list-style:none;
+    <div class="container">
 
-}
+        <div class="hero-grid">
 
-button{
+            <!-- Left Content -->
 
-    border:none;
+            <div class="hero-content">
 
-    outline:none;
+                <div class="hero-badge">
 
-    cursor:pointer;
+                    🚀 AI Powered Marketing Platform
 
-    background:none;
+                </div>
 
-    font-family:inherit;
+                <h1 class="hero-title">
 
-}
+                    The Future of
 
-input{
+                    <span>Influencer Marketing</span>
 
-    outline:none;
+                    Starts Here
 
-    font-family:inherit;
+                </h1>
 
-}
+                <p class="hero-description">
 
+                    Connect brands with the perfect influencers,
+                    launch campaigns, manage collaborations,
+                    and analyze performance using AI-powered tools.
 
+                </p>
 
-/*=========================
-        VARIABLES
-=========================*/
+                <div class="hero-buttons">
 
-:root{
+                    <a href="#" class="btn btn-primary">
 
-    --primary:#E11D2E;
+                        Start Free
 
-    --primary-light:#FF4D5D;
+                    </a>
 
-    --primary-dark:#B91C1C;
+                    <a href="#" class="btn btn-secondary">
 
-    --secondary:#0F172A;
+                        Watch Demo
 
-    --surface:#FFFFFF;
+                    </a>
 
-    --background:#F8FAFC;
+                </div>
 
-    --text:#334155;
+                <div class="hero-users">
 
-    --text-light:#64748B;
+                    <div class="avatars">
 
-    --border:#E2E8F0;
+                        <img src="assets/images/avatar1.jpg">
 
-    --success:#22C55E;
+                        <img src="assets/images/avatar2.jpg">
 
-    --warning:#F59E0B;
+                        <img src="assets/images/avatar3.jpg">
 
-    --blue:#2563EB;
+                        <img src="assets/images/avatar4.jpg">
 
-    --purple:#8B5CF6;
+                    </div>
 
-    --radius-xs:10px;
+                    <div>
 
-    --radius-sm:16px;
+                        <strong>12,500+</strong>
 
-    --radius-md:24px;
+                        Trusted Users
 
-    --radius-lg:34px;
+                    </div>
 
-    --radius-xl:46px;
+                </div>
 
-    --radius-full:999px;
+            </div>
 
-}
+            <!-- Right Content -->
 
+            <div class="hero-image">
 
+                <img src="assets/images/dashboard.png" alt="Dashboard">
 
-/*=========================
-        SHADOWS
-=========================*/
+                <!-- Floating Card -->
 
-:root{
+                <div class="hero-card card-one">
 
-    --shadow-xs:
+                    <h4>$1.2M</h4>
 
-    0 2px 6px rgba(15,23,42,.04);
+                    <span>Campaign Revenue</span>
 
-    --shadow-sm:
+                </div>
 
-    0 10px 25px rgba(15,23,42,.05);
+                <div class="hero-card card-two">
 
-    --shadow-md:
+                    <h4>2450+</h4>
 
-    0 25px 60px rgba(15,23,42,.08);
+                    <span>Influencers</span>
 
-    --shadow-lg:
+                </div>
 
-    0 45px 100px rgba(15,23,42,.12);
+                <div class="hero-card card-three">
 
-    --shadow-primary:
+                    <h4>98%</h4>
 
-    0 25px 60px rgba(225,29,46,.20);
+                    <span>Success Rate</span>
 
-}
+                </div>
 
+            </div>
 
+        </div>
 
-/*=========================
-        GLASS
-=========================*/
+    </div>
 
-:root{
+</section>
+<!-- ===========================================
+            TRUSTED BY
+============================================ -->
 
-    --glass:
+<section class="trusted">
 
-    rgba(255,255,255,.60);
+    <div class="container">
 
-    --glass-border:
+        <div class="trusted-title">
 
-    rgba(255,255,255,.45);
+            Trusted by leading brands and agencies worldwide
 
-}
+        </div>
 
+        <div class="trusted-logos">
 
+            <div class="brand">
+                Google
+            </div>
 
-/*=========================
-        CONTAINER
-=========================*/
+            <div class="brand">
+                Meta
+            </div>
 
-.container{
+            <div class="brand">
+                TikTok
+            </div>
 
-    width:min(92%,1450px);
+            <div class="brand">
+                YouTube
+            </div>
 
-    margin:auto;
+            <div class="brand">
+                Snapchat
+            </div>
 
-}
+            <div class="brand">
+                Amazon
+            </div>
 
+        </div>
 
+    </div>
 
-/*=========================
-        BACKGROUND
-=========================*/
+</section>
+<!-- ===========================================
+            SERVICES SECTION
+============================================ -->
 
-body::before{
+<section class="services">
 
-    content:"";
+    <div class="container">
 
-    position:fixed;
+        <div class="section-header">
 
-    inset:0;
+            <span class="badge">
 
-    z-index:-3;
+                Everything in One Place
 
-    background:
+            </span>
 
-    radial-gradient(circle at 0% 0%,
+            <h2>
 
-    rgba(225,29,46,.10),
+                Built For Brands,
+                Agencies & Influencers
 
-    transparent 35%),
+            </h2>
 
-    radial-gradient(circle at 100% 20%,
+            <p>
 
-    rgba(37,99,235,.08),
+                Manage campaigns, discover creators,
+                communicate, analyze results and grow
+                your business from one platform.
 
-    transparent 30%),
+            </p>
 
-    radial-gradient(circle at 50% 100%,
+        </div>
 
-    rgba(139,92,246,.08),
+        <div class="services-grid">
 
-    transparent 30%),
+            <!-- Card 1 -->
 
-    linear-gradient(
+            <div class="service-card">
 
-    180deg,
+                <div class="service-icon">
 
-    #ffffff,
+                    🎯
 
-    #f8fafc
+                </div>
 
-    );
+                <h3>
 
-}
+                    Campaign Management
 
+                </h3>
 
+                <p>
 
-/*=========================
-        GRID
-=========================*/
+                    Create, publish and manage marketing
+                    campaigns with a modern dashboard.
 
-.grid{
+                </p>
 
-    display:grid;
+                <a href="#">
 
-}
+                    Learn More →
 
-.flex{
+                </a>
 
-    display:flex;
+            </div>
 
-}
+            <!-- Card 2 -->
 
-.center{
+            <div class="service-card">
 
-    display:flex;
+                <div class="service-icon">
 
-    justify-content:center;
+                    🤖
 
-    align-items:center;
+                </div>
 
-}
+                <h3>
 
+                    AI Matching
 
+                </h3>
 
-/*=========================
-        SECTION
-=========================*/
+                <p>
 
-section{
+                    Find the perfect influencer using
+                    artificial intelligence and advanced
+                    analytics.
 
-    position:relative;
+                </p>
 
-    padding:120px 0;
+                <a href="#">
 
-}
+                    Learn More →
 
+                </a>
 
+            </div>
 
-/*=========================
-        TYPOGRAPHY
-=========================*/
+            <!-- Card 3 -->
 
-h1{
+            <div class="service-card">
 
-    font-size:clamp(3rem,6vw,5.4rem);
+                <div class="service-icon">
 
-    font-weight:900;
+                    📊
 
-    line-height:1.05;
+                </div>
 
-    color:#0F172A;
+                <h3>
 
-}
+                    Live Analytics
 
-h2{
+                </h3>
 
-    font-size:clamp(2.4rem,5vw,4rem);
+                <p>
 
-    font-weight:800;
+                    Track campaign performance with
+                    beautiful real-time dashboards.
 
-    color:#0F172A;
+                </p>
 
-}
+                <a href="#">
 
-h3{
+                    Learn More →
 
-    font-size:1.8rem;
+                </a>
 
-    font-weight:700;
+            </div>
 
-}
+            <!-- Card 4 -->
 
-p{
+            <div class="service-card">
 
-    color:#64748B;
+                <div class="service-icon">
 
-}
+                    💬
 
+                </div>
 
+                <h3>
 
-/*=========================
-        GLASS CARD
-=========================*/
+                    Built-in Chat
 
-.glass{
+                </h3>
 
-    background:var(--glass);
+                <p>
 
-    backdrop-filter:blur(24px);
+                    Communicate directly with brands,
+                    agencies and influencers.
 
-    border:1px solid var(--glass-border);
+                </p>
 
-    border-radius:28px;
+                <a href="#">
 
-    box-shadow:var(--shadow-md);
+                    Learn More →
 
-}
+                </a>
 
+            </div>
 
+            <!-- Card 5 -->
 
-/*=========================
-        BUTTONS
-=========================*/
+            <div class="service-card">
 
-.btn{
+                <div class="service-icon">
 
-    display:inline-flex;
+                    💳
 
-    justify-content:center;
+                </div>
 
-    align-items:center;
+                <h3>
 
-    gap:12px;
+                    Secure Payments
 
-    padding:18px 34px;
+                </h3>
 
-    border-radius:999px;
+                <p>
 
-    transition:.35s;
+                    Safe contracts, invoices,
+                    payments and financial reports.
 
-    font-weight:700;
+                </p>
 
-}
+                <a href="#">
 
-.btn-primary{
+                    Learn More →
 
-    color:#fff;
+                </a>
 
-    background:
+            </div>
 
-    linear-gradient(
+            <!-- Card 6 -->
 
-    135deg,
+            <div class="service-card featured">
 
-    var(--primary),
+                <div class="service-icon">
 
-    var(--primary-dark)
+                    🚀
 
-    );
+                </div>
 
-    box-shadow:var(--shadow-primary);
+                <h3>
 
-}
+                    AI Studio
 
-.btn-primary:hover{
+                </h3>
 
-    transform:translateY(-6px);
+                <p>
 
-}
+                    Generate campaigns, captions,
+                    ideas and reports with AI.
 
-.btn-secondary{
+                </p>
 
-    background:#fff;
+                <a href="#">
 
-    border:1px solid var(--border);
+                    Explore AI →
 
-}
+                </a>
 
-.btn-secondary:hover{
+            </div>
 
-    background:#0F172A;
+        </div>
 
-    color:#fff;
+    </div>
 
-}
-/*==================================================
-                HEADER
-==================================================*/
+</section>
+<!-- ===========================================
+            MARKETPLACE SECTION
+============================================ -->
 
-.header{
+<section class="marketplace">
 
-    position:fixed;
+    <div class="container">
 
-    top:0;
+        <div class="section-header">
 
-    right:0;
+            <span class="badge">
 
-    left:0;
+                Marketplace
 
-    z-index:9999;
+            </span>
 
-    padding:18px 0;
+            <h2>
 
-    transition:.45s cubic-bezier(.16,1,.3,1);
+                Discover Top Influencers
 
-}
+            </h2>
 
-.header.scrolled{
+            <p>
 
-    padding:10px 0;
+                Browse thousands of verified influencers
+                from different categories and start your
+                next successful campaign.
 
-}
+            </p>
 
-.header .container{
+        </div>
 
-    display:flex;
+        <div class="marketplace-grid">
 
-    justify-content:space-between;
+            <!-- Influencer Card -->
 
-    align-items:center;
+            <div class="creator-card">
 
-}
+                <div class="creator-cover">
 
+                    <img src="assets/images/influencers/influencer-1.jpg" alt="">
 
+                </div>
 
-/*==================================================
-            NAVBAR GLASS
-==================================================*/
+                <div class="creator-body">
 
-.nav-wrapper{
+                    <img class="creator-avatar"
+                         src="assets/images/avatar1.jpg"
+                         alt="">
 
-    width:100%;
+                    <h3>Sarah Johnson</h3>
 
-    height:78px;
+                    <span class="creator-category">
 
-    display:flex;
+                        Fashion & Lifestyle
 
-    justify-content:space-between;
+                    </span>
 
-    align-items:center;
+                    <div class="creator-stats">
 
-    padding:0 28px;
+                        <div>
 
-    border-radius:24px;
+                            <strong>1.2M</strong>
 
-    background:rgba(255,255,255,.62);
+                            <small>Followers</small>
 
-    backdrop-filter:blur(26px);
+                        </div>
 
-    border:1px solid rgba(255,255,255,.55);
+                        <div>
 
-    box-shadow:
+                            <strong>5.4%</strong>
 
-    0 20px 60px rgba(15,23,42,.08);
+                            <small>Engagement</small>
 
-}
+                        </div>
 
+                        <div>
 
+                            <strong>420</strong>
 
-/*==================================================
-                LOGO
-==================================================*/
+                            <small>Campaigns</small>
 
-.logo{
+                        </div>
 
-    display:flex;
+                    </div>
 
-    align-items:center;
+                    <div class="creator-footer">
 
-    gap:15px;
+                        <button class="btn btn-secondary">
 
-}
+                            View Profile
 
-.logo img{
+                        </button>
 
-    height:54px;
+                        <button class="btn btn-primary">
 
-}
+                            Hire
 
-.logo span{
+                        </button>
 
-    font-size:1.5rem;
+                    </div>
 
-    font-weight:800;
+                </div>
 
-    color:#0F172A;
+            </div>
 
-}
+            <!-- Company Card -->
 
+            <div class="company-preview">
 
+                <div class="company-header">
 
-/*==================================================
-            NAVIGATION
-==================================================*/
+                    <img src="assets/images/company.png">
 
-.navbar ul{
+                    <div>
 
-    display:flex;
+                        <h3>Apple Store</h3>
 
-    align-items:center;
+                        <span>Technology</span>
 
-    gap:42px;
+                    </div>
 
-}
+                </div>
 
-.navbar a{
+                <div class="campaign-box">
 
-    position:relative;
+                    <h4>
 
-    font-size:15px;
+                        New Campaign
 
-    font-weight:600;
+                    </h4>
 
-    color:#475569;
+                    <p>
 
-    transition:.35s;
+                        Looking for creators in
+                        Technology & Lifestyle.
 
-}
+                    </p>
 
-.navbar a:hover{
+                    <ul>
 
-    color:var(--primary);
+                        <li>Budget : $12,000</li>
 
-}
+                        <li>Duration : 30 Days</li>
 
-.navbar a::after{
+                        <li>Platform : Instagram</li>
 
-    content:"";
+                    </ul>
 
-    position:absolute;
+                    <button class="btn btn-primary">
 
-    bottom:-8px;
+                        Apply Now
 
-    left:50%;
+                    </button>
 
-    width:0;
+                </div>
 
-    height:3px;
+            </div>
 
-    transform:translateX(-50%);
+            <!-- Live Activity -->
 
-    background:var(--primary);
+            <div class="activity-card">
 
-    border-radius:999px;
+                <h3>
 
-    transition:.35s;
+                    Live Marketplace
 
-}
+                </h3>
 
-.navbar a:hover::after{
+                <ul>
 
-    width:30px;
+                    <li>
 
-}
+                        ✅ Nike hired Alex Brown
 
-.navbar .active{
+                    </li>
 
-    color:var(--primary);
+                    <li>
 
-}
+                        ✅ Samsung launched campaign
 
-.navbar .active::after{
+                    </li>
 
-    width:30px;
+                    <li>
 
-}
+                        ✅ 145 creators joined today
 
+                    </li>
 
+                    <li>
 
-/*==================================================
-            HEADER BUTTONS
-==================================================*/
+                        ✅ 39 campaigns completed
 
-.header-actions{
+                    </li>
 
-    display:flex;
+                    <li>
 
-    align-items:center;
+                        ✅ Revenue today $84,250
 
-    gap:14px;
+                    </li>
 
-}
+                </ul>
 
+                <button class="btn btn-secondary">
 
+                    View Marketplace
 
-/*==================================================
-                HERO
-==================================================*/
+                </button>
 
-.hero{
+            </div>
 
-    min-height:100vh;
+        </div>
 
-    display:flex;
+    </div>
 
-    align-items:center;
+</section>
+<!-- ===========================================
+                AI STUDIO
+============================================ -->
 
-    overflow:hidden;
+<section class="ai-section">
 
-    position:relative;
+    <div class="container">
 
-}
+        <div class="hero-grid">
 
+            <!-- Left Side -->
 
+            <div class="ai-content">
 
-/*==================================================
-        HERO BACKGROUND
-==================================================*/
+                <span class="badge">
 
-.hero::before{
+                    🤖 AI Studio
 
-    content:"";
+                </span>
 
-    position:absolute;
+                <h2>
 
-    width:700px;
+                    Let Artificial Intelligence
+                    Build Your Next Campaign
 
-    height:700px;
+                </h2>
 
-    border-radius:50%;
+                <p>
 
-    background:
+                    Generate campaign ideas, marketing plans,
+                    influencer recommendations, captions,
+                    hashtags and complete reports in seconds.
 
-    radial-gradient(
+                </p>
 
-        circle,
+                <div class="ai-features">
 
-        rgba(225,29,46,.15),
+                    <div class="feature-item">
 
-        transparent
+                        ✅ AI Campaign Generator
 
-    );
+                    </div>
 
-    top:-250px;
+                    <div class="feature-item">
 
-    right:-220px;
+                        ✅ Influencer Recommendation
 
-    filter:blur(80px);
+                    </div>
 
-}
+                    <div class="feature-item">
 
-.hero::after{
+                        ✅ Smart Analytics
 
-    content:"";
+                    </div>
 
-    position:absolute;
+                    <div class="feature-item">
 
-    width:550px;
+                        ✅ Marketing Reports
 
-    height:550px;
+                    </div>
 
-    border-radius:50%;
+                    <div class="feature-item">
 
-    background:
+                        ✅ ROI Prediction
 
-    radial-gradient(
+                    </div>
 
-        circle,
+                </div>
 
-        rgba(37,99,235,.12),
+                <div class="hero-buttons">
 
-        transparent
+                    <button class="btn btn-primary">
 
-    );
+                        Try AI Studio
 
-    bottom:-220px;
+                    </button>
 
-    left:-150px;
+                    <button class="btn btn-secondary">
 
-    filter:blur(90px);
+                        Learn More
 
-}
+                    </button>
 
+                </div>
 
+            </div>
 
-/*==================================================
-            HERO GRID
-==================================================*/
+            <!-- Right Side -->
 
-.hero-grid{
+            <div class="ai-preview">
 
-    display:grid;
+                <div class="ai-window">
 
-    grid-template-columns:
+                    <div class="window-header">
 
-    1.05fr
+                        <span></span>
+                        <span></span>
+                        <span></span>
 
-    .95fr;
+                    </div>
 
-    gap:90px;
+                    <div class="window-body">
 
-    align-items:center;
+                        <div class="prompt">
 
-}
+                            Create a campaign for
+                            a coffee brand targeting
+                            people aged 18-30.
 
+                        </div>
 
+                        <div class="response">
 
-/*==================================================
-            HERO CONTENT
-==================================================*/
+                            ✔ Campaign Created
 
-.hero-content{
+                            <br><br>
 
-    position:relative;
+                            Budget:
+                            $12,000
 
-    z-index:2;
+                            <br>
 
-}
+                            Platform:
+                            Instagram + TikTok
 
+                            <br>
 
+                            Recommended Influencers:
+                            12
 
-/*==================================================
-            HERO BADGE
-==================================================*/
+                            <br>
 
-.hero-badge{
+                            Estimated Reach:
+                            4.8 Million
 
-    display:inline-flex;
+                            <br>
 
-    align-items:center;
+                            ROI Prediction:
+                            +182%
 
-    gap:10px;
+                        </div>
 
-    padding:12px 22px;
+                    </div>
 
-    border-radius:999px;
+                </div>
 
-    background:rgba(255,255,255,.65);
+            </div>
 
-    backdrop-filter:blur(18px);
+        </div>
 
-    border:1px solid rgba(255,255,255,.55);
+    </div>
 
-    margin-bottom:28px;
+</section>
+<!-- ===========================================
+            EXPLORE THE ECOSYSTEM
+============================================ -->
 
-    color:var(--primary);
+<section class="ecosystem">
 
-    font-weight:700;
+    <div class="container">
 
-}
+        <div class="section-header">
 
+            <span class="badge">
 
+                MOVIX Ecosystem
 
-/*==================================================
-            HERO TITLE
-==================================================*/
+            </span>
 
-.hero-title{
+            <h2>
 
-    margin-bottom:30px;
+                Everything You Need
+                In One Smart Platform
 
-}
+            </h2>
 
-.hero-title span{
+            <p>
 
-    color:var(--primary);
+                Whether you are a Brand, Influencer,
+                Agency or Marketing Team,
+                MOVIX gives you all the tools in one place.
 
-}
+            </p>
 
+        </div>
 
+        <div class="ecosystem-grid">
 
-/*==================================================
-            HERO DESCRIPTION
-==================================================*/
+            <!-- Brands -->
 
-.hero-description{
+            <div class="eco-card">
 
-    max-width:640px;
+                <div class="eco-icon">
 
-    font-size:1.1rem;
+                    🏢
 
-    margin-bottom:45px;
+                </div>
 
-}
+                <h3>
 
+                    Brands
 
+                </h3>
 
-/*==================================================
-            HERO BUTTONS
-==================================================*/
+                <p>
 
-.hero-buttons{
+                    Launch campaigns, hire creators,
+                    approve content and monitor ROI.
 
-    display:flex;
+                </p>
 
-    gap:18px;
+                <ul>
 
-    flex-wrap:wrap;
+                    <li>✔ Campaign Manager</li>
+                    <li>✔ Budget Control</li>
+                    <li>✔ AI Reports</li>
+                    <li>✔ Smart Analytics</li>
 
-}
+                </ul>
 
+                <a href="#">
 
+                    Explore →
 
-/*==================================================
-        HERO IMAGE
-==================================================*/
+                </a>
 
-.hero-image{
+            </div>
 
-    position:relative;
+            <!-- Influencers -->
 
-    display:flex;
+            <div class="eco-card">
 
-    justify-content:center;
+                <div class="eco-icon">
 
-    align-items:center;
+                    ⭐
 
-}
+                </div>
 
+                <h3>
 
+                    Influencers
 
-/*==================================================
-        DASHBOARD MOCKUP
-==================================================*/
+                </h3>
 
-.dashboard-preview{
+                <p>
 
-    width:100%;
+                    Find campaigns, negotiate,
+                    sign contracts and get paid.
 
-    max-width:720px;
+                </p>
 
-    border-radius:30px;
+                <ul>
 
-    overflow:hidden;
+                    <li>✔ Marketplace</li>
+                    <li>✔ Verified Profile</li>
+                    <li>✔ Performance Score</li>
+                    <li>✔ Secure Payments</li>
 
-    background:rgba(255,255,255,.72);
+                </ul>
 
-    backdrop-filter:blur(24px);
+                <a href="#">
 
-    border:1px solid rgba(255,255,255,.55);
+                    Explore →
 
-    box-shadow:
+                </a>
 
-    0 40px 100px rgba(15,23,42,.14);
+            </div>
 
-    transform:
+            <!-- Agencies -->
 
-    perspective(1600px)
+            <div class="eco-card">
 
-    rotateY(-7deg)
+                <div class="eco-icon">
 
-    rotateX(5deg);
+                    🤝
 
-    transition:.5s;
+                </div>
 
-}
+                <h3>
 
-.dashboard-preview:hover{
+                    Agencies
 
-    transform:
+                </h3>
 
-    perspective(1600px)
+                <p>
 
-    rotateY(-2deg)
+                    Manage multiple clients,
+                    campaigns and influencers
+                    from one dashboard.
 
-    rotateX(2deg)
+                </p>
 
-    translateY(-10px);
+                <ul>
 
-}
+                    <li>✔ Multi Client</li>
+                    <li>✔ Team Members</li>
+                    <li>✔ Reports</li>
+                    <li>✔ AI Assistant</li>
 
-.dashboard-preview img{
+                </ul>
 
-    width:100%;
+                <a href="#">
 
-}
+                    Explore →
 
+                </a>
 
+            </div>
 
-/*==================================================
-            FLOATING BADGES
-==================================================*/
+            <!-- AI -->
 
-.floating{
+            <div class="eco-card featured">
 
-    position:absolute;
+                <div class="eco-icon">
 
-    padding:18px 24px;
+                    🤖
 
-    border-radius:22px;
+                </div>
 
-    background:rgba(255,255,255,.70);
+                <h3>
 
-    backdrop-filter:blur(22px);
+                    AI Studio
 
-    border:1px solid rgba(255,255,255,.6);
+                </h3>
 
-    box-shadow:
+                <p>
 
-    0 20px 50px rgba(15,23,42,.10);
+                    Generate complete campaigns,
+                    marketing plans, influencer
+                    recommendations and reports.
 
-}
+                </p>
 
-.float-1{
+                <ul>
 
-    top:-30px;
+                    <li>✔ AI Generator</li>
+                    <li>✔ AI Analytics</li>
+                    <li>✔ AI Reports</li>
+                    <li>✔ AI Strategy</li>
 
-    left:-20px;
+                </ul>
 
-}
+                <a href="#">
 
-.float-2{
+                    Launch AI →
 
-    bottom:-20px;
+                </a>
 
-    right:-25px;
+            </div>
 
-}
+        </div>
 
-.float-3{
+    </div>
 
-    top:45%;
+</section>
+<!-- ===========================================
+            LIVE DASHBOARD PREVIEW
+============================================ -->
 
-    right:-40px;
+<section class="dashboard-preview-section">
 
-}
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="badge">
+                Live Dashboard
+            </span>
+
+            <h2>
+
+                Powerful Dashboard
+                Built For Modern Marketing
+
+            </h2>
+
+            <p>
+
+                Manage campaigns, monitor influencers,
+                analyze performance and grow your business
+                from one beautiful dashboard.
+
+            </p>
+
+        </div>
+
+        <div class="dashboard-preview">
+
+            <!-- Sidebar -->
+
+            <aside class="dashboard-sidebar">
+
+                <div class="sidebar-logo">
+
+                    MOVIX
+
+                </div>
+
+                <ul>
+
+                    <li class="active">🏠 Dashboard</li>
+
+                    <li>📢 Campaigns</li>
+
+                    <li>⭐ Influencers</li>
+
+                    <li>🏢 Companies</li>
+
+                    <li>💬 Messages</li>
+
+                    <li>📊 Analytics</li>
+
+                    <li>🤖 AI Studio</li>
+
+                    <li>⚙ Settings</li>
+
+                </ul>
+
+            </aside>
+
+            <!-- Main -->
+
+            <div class="dashboard-main">
+
+                <!-- Top Cards -->
+
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card">
+
+                        <small>
+
+                            Revenue
+
+                        </small>
+
+                        <h3>
+
+                            $248,520
+
+                        </h3>
+
+                        <span>
+
+                            ▲ +18.6%
+
+                        </span>
+
+                    </div>
+
+                    <div class="dashboard-card">
+
+                        <small>
+
+                            Campaigns
+
+                        </small>
+
+                        <h3>
+
+                            582
+
+                        </h3>
+
+                        <span>
+
+                            ▲ +24%
+
+                        </span>
+
+                    </div>
+
+                    <div class="dashboard-card">
+
+                        <small>
+
+                            Influencers
+
+                        </small>
+
+                        <h3>
+
+                            2,458
+
+                        </h3>
+
+                        <span>
+
+                            ▲ +11%
+
+                        </span>
+
+                    </div>
+
+                    <div class="dashboard-card">
+
+                        <small>
+
+                            ROI
+
+                        </small>
+
+                        <h3>
+
+                            186%
+
+                        </h3>
+
+                        <span>
+
+                            Excellent
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Chart -->
+
+                <div class="chart-box">
+
+                    <div class="chart-header">
+
+                        <h3>
+
+                            Campaign Performance
+
+                        </h3>
+
+                        <span>
+
+                            Last 30 Days
+
+                        </span>
+
+                    </div>
+
+                    <div class="chart-placeholder">
+
+                        📈 Interactive Chart
+
+                    </div>
+
+                </div>
+
+                <!-- Recent Campaigns -->
+
+                <div class="campaign-table">
+
+                    <div class="table-header">
+
+                        <h3>
+
+                            Latest Campaigns
+
+                        </h3>
+
+                    </div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Brand</th>
+
+                                <th>Budget</th>
+
+                                <th>Status</th>
+
+                                <th>ROI</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Apple</td>
+
+                                <td>$12,000</td>
+
+                                <td>Running</td>
+
+                                <td>172%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Nike</td>
+
+                                <td>$25,000</td>
+
+                                <td>Completed</td>
+
+                                <td>204%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Samsung</td>
+
+                                <td>$19,500</td>
+
+                                <td>Running</td>
+
+                                <td>164%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Netflix</td>
+
+                                <td>$8,900</td>
+
+                                <td>Pending</td>
+
+                                <td>--</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
